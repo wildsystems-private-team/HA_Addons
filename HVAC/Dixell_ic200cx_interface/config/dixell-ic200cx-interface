@@ -91,6 +91,47 @@ sensor:
       multiply: 0.1
     internal: true 
 
+  - platform: modbus_controller
+    modbus_controller_id: ic100cx
+    name: "Current underfloor exit temperature"
+    id: cr_uf_ex_tmp
+    register_type: holding
+    address: 256
+    unit_of_measurement: "°C"
+    filters: 
+      multiply: 0.1
+    internal: true
+
+  - platform: modbus_controller
+    modbus_controller_id: ic100cx
+    name: "Current underfloor in temperature"
+    id: cr_uf_in_tmp
+    register_type: holding
+    address: 258
+    unit_of_measurement: "°C"
+    filters: 
+      multiply: 0.1 
+
+  - platform: modbus_controller
+    modbus_controller_id: ic100cx
+    name: "Current weel in temperature"
+    id: cr_wl_in_tmp
+    register_type: holding
+    address: 260
+    unit_of_measurement: "°C"
+    filters: 
+      multiply: 0.1
+
+  - platform: modbus_controller
+    modbus_controller_id: ic100cx
+    name: "Current weel exit temperature"
+    id: cr_wl_out_tmp
+    register_type: holding
+    address: 262
+    unit_of_measurement: "°C"
+    filters: 
+      multiply: 0.1
+
 binary_sensor:
   - platform: modbus_controller
     modbus_controller_id: ic100cx
