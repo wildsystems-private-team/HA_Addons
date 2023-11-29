@@ -15,7 +15,18 @@ esphome:
   project:
     name: nivanov0.dixell-ic100cx-controller
     version: "0.1"
-
+  on_boot:
+    priority: 800
+    then:
+      lambda: |-
+        if(id(heating_on).state) {
+          id(tp_tgt_tmp).publish_state(id(tgt_ht_tmp).state);
+        } else if(id(heating_on).state) {
+          id(tp_tgt_tmp).publish_state(id(tgt_ht_tmp).state);
+        } else {
+          id(tp_tgt_tmp).publish_state (-1);
+        }
+      
 esp32:
   board: esp32dev
   framework:
@@ -228,4 +239,12 @@ select:
                 id: register_1282
                 level: 0.2
 
+number:
+  - platform: template
+    name: "Target temperature"
+    id: tp_tgt_tmp
+    optimistic: True
+    min_value: 17
+    max_value: 50
+    step: 0.1
           
