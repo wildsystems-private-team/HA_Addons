@@ -1,0 +1,15 @@
+Acronyms:
+ic100cx - heat pump controller
+HA - Home Assistant
+HP - Heat pump
+
+Communicate via Modbus with ic100cx
+Export to HA temperatures from the HP
+Allows target temperature changes from HA
+Allows management from HA - change modes to off, cooling and heating
+Exports alarm status report to HA
+Exports to HA boiler temperatures with ability to measure it in 3 different points
+Manage hot water recirculation pump
+Monitors the idle time of the pump and switches it on at pre-set intervals to prevent blockage
+Manage situation when input water relay is switched ON, but there is no water flow trough the HP
+Calculate power in KW transferred to the internal water circuit
