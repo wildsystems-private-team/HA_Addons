@@ -3,12 +3,12 @@
     "3dviewports": [],
     "design_settings": {
       "defaults": {
-        "board_outline_line_width": 0.038099999999999995,
-        "copper_line_width": 0.254,
+        "board_outline_line_width": 0.09999999999999999,
+        "copper_line_width": 0.19999999999999998,
         "copper_text_italic": false,
-        "copper_text_size_h": 1.524,
-        "copper_text_size_v": 1.524,
-        "copper_text_thickness": 0.30479999999999996,
+        "copper_text_size_h": 1.5,
+        "copper_text_size_v": 1.5,
+        "copper_text_thickness": 0.3,
         "copper_text_upright": false,
         "courtyard_line_width": 0.049999999999999996,
         "dimension_precision": 4,
@@ -27,7 +27,7 @@
         "fab_text_size_v": 1.0,
         "fab_text_thickness": 0.15,
         "fab_text_upright": false,
-        "other_line_width": 0.09999999999999999,
+        "other_line_width": 0.15,
         "other_text_italic": false,
         "other_text_size_h": 1.0,
         "other_text_size_v": 1.0,
@@ -38,20 +38,25 @@
           "height": 1.524,
           "width": 1.524
         },
-        "silk_line_width": 0.15239999999999998,
+        "silk_line_width": 0.15,
         "silk_text_italic": false,
-        "silk_text_size_h": 0.8128,
-        "silk_text_size_v": 0.8128,
-        "silk_text_thickness": 0.15239999999999998,
+        "silk_text_size_h": 1.0,
+        "silk_text_size_v": 1.0,
+        "silk_text_thickness": 0.15,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.508
+          "min_clearance": 0.19999999999999998
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
-        "filename": "board_design_settings.json",
         "version": 2
       },
       "rule_severities": {
@@ -104,8 +109,6 @@
         "via_dangling": "warning",
         "zones_intersect": "error"
       },
-      "rule_severitieslegacy_courtyards_overlap": true,
-      "rule_severitieslegacy_no_courtyard_defined": true,
       "rules": {
         "max_error": 0.005,
         "min_clearance": 0.0,
@@ -113,17 +116,19 @@
         "min_copper_edge_clearance": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.25,
-        "min_microvia_diameter": 0.0,
-        "min_microvia_drill": 0.0,
-        "min_resolved_spokes": 1,
+        "min_microvia_diameter": 0.19999999999999998,
+        "min_microvia_drill": 0.09999999999999999,
+        "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.127,
+        "min_track_width": 0.0,
         "min_via_annular_width": 0.09999999999999999,
-        "min_via_diameter": 0.6,
-        "solder_mask_to_copper_clearance": 0.005,
+        "min_via_diameter": 0.5,
+        "solder_mask_clearance": 0.0,
+        "solder_mask_min_width": 0.0,
+        "solder_mask_to_copper_clearance": 0.0,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -167,24 +172,12 @@
         }
       ],
       "track_widths": [
-        0.0,
-        0.15,
-        0.2,
-        0.4,
-        0.6
+        0.0
       ],
       "via_dimensions": [
         {
           "diameter": 0.0,
           "drill": 0.0
-        },
-        {
-          "diameter": 0.6,
-          "drill": 0.3
-        },
-        {
-          "diameter": 0.9,
-          "drill": 0.4
         }
       ],
       "zones_allow_external_fillets": false
@@ -397,7 +390,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "ignore",
@@ -412,43 +405,43 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "uhc-4.kicad_pro",
+    "filename": "uhc-12.kicad_pro",
     "version": 1
   },
   "net_settings": {
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.127,
-        "diff_pair_gap": 0.254,
+        "clearance": 0.2,
+        "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1524,
+        "diff_pair_width": 0.2,
         "line_style": 0,
-        "microvia_diameter": 0.6858,
-        "microvia_drill": 0.3302,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.127,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.8,
-        "diff_pair_gap": 0.254,
+        "clearance": 0.7,
+        "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1524,
+        "diff_pair_width": 0.2,
         "line_style": 0,
-        "microvia_diameter": 0.6858,
-        "microvia_drill": 0.3302,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
         "name": "220V",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.8,
-        "via_diameter": 0.6,
-        "via_drill": 0.3,
+        "track_width": 1.0,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
         "wire_width": 6
       }
     ],
@@ -457,21 +450,47 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "/IO_220V/220V_out": "220V",
+      "/IO_220V1/220V_out": "220V",
+      "/IO_220V10/220V_out": "220V",
+      "/IO_220V11/220V_out": "220V",
+      "/IO_220V2/220V_out": "220V",
+      "/IO_220V3/220V_out": "220V",
+      "/IO_220V4/220V_out": "220V",
+      "/IO_220V5/220V_out": "220V",
+      "/IO_220V6/220V_out": "220V",
+      "/IO_220V7/220V_out": "220V",
+      "/IO_220V8/220V_out": "220V",
+      "/IO_220V9/220V_out": "220V",
+      "/L": "220V",
+      "/N": "220V",
       "/Power/L": "220V",
-      "/PowerOut/220V_out": "220V",
-      "/PowerOut1/220V_out": "220V",
-      "/PowerOut2/220V_out": "220V",
-      "/PowerOut3/220V_out": "220V",
       "Fused L": "220V",
       "N": "220V",
       "Net-(OC1-Pad6)": "220V",
-      "Net-(OC2-Pad2)": "220V",
+      "Net-(OC10-Pad6)": "220V",
+      "Net-(OC11-Pad6)": "220V",
+      "Net-(OC12-Pad6)": "220V",
+      "Net-(OC2-Pad6)": "220V",
       "Net-(OC3-Pad6)": "220V",
-      "Net-(OC4-Pad2)": "220V",
+      "Net-(OC4-Pad6)": "220V",
+      "Net-(OC5-Pad6)": "220V",
+      "Net-(OC6-Pad6)": "220V",
+      "Net-(OC7-Pad6)": "220V",
+      "Net-(OC8-Pad6)": "220V",
+      "Net-(OC9-Pad6)": "220V",
       "Net-(Q1-G)": "220V",
+      "Net-(Q10-G)": "220V",
+      "Net-(Q11-G)": "220V",
+      "Net-(Q12-G)": "220V",
       "Net-(Q2-G)": "220V",
       "Net-(Q3-G)": "220V",
-      "Net-(Q4-G)": "220V"
+      "Net-(Q4-G)": "220V",
+      "Net-(Q5-G)": "220V",
+      "Net-(Q6-G)": "220V",
+      "Net-(Q7-G)": "220V",
+      "Net-(Q8-G)": "220V",
+      "Net-(Q9-G)": "220V"
     },
     "netclass_patterns": []
   },
@@ -481,10 +500,10 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "uhc-12.step",
       "vrml": ""
     },
-    "page_layout_descr_file": "default.kicad_wks"
+    "page_layout_descr_file": ""
   },
   "schematic": {
     "annotate_start_num": 0,
@@ -500,9 +519,9 @@
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
-      "label_size_ratio": 0.25,
-      "pin_symbol_size": 0.0,
-      "text_offset_ratio": 0.08
+      "label_size_ratio": 0.375,
+      "pin_symbol_size": 25.0,
+      "text_offset_ratio": 0.15
     },
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
@@ -510,9 +529,8 @@
       "version": 1
     },
     "net_format_name": "",
-    "page_layout_descr_file": "default.kicad_wks",
+    "page_layout_descr_file": "",
     "plot_directory": "",
-    "spice_adjust_passive_values": false,
     "spice_current_sheet_as_root": false,
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
@@ -523,28 +541,60 @@
   },
   "sheets": [
     [
-      "c1cf2f7f-f56e-4460-8a80-f4927e1b8fad",
+      "b22b35c5-ab28-4fe6-b675-a1eb8353af9c",
       ""
     ],
     [
-      "309242be-d508-465d-bec3-25c313d37f59",
+      "48bab36c-4a68-40f9-aeee-7a29604a4b52",
+      "IO_220V"
+    ],
+    [
+      "6791660d-73c7-4280-8877-d99d564331b1",
+      "IO_220V1"
+    ],
+    [
+      "eb243d34-3123-4a56-a0db-77c6badf710c",
+      "IO_220V2"
+    ],
+    [
+      "d9757fd7-4c32-4cdd-bd80-027a506193f3",
+      "IO_220V3"
+    ],
+    [
+      "b9df6313-8bc6-4a78-8915-53032c0bd6f1",
+      "IO_220V4"
+    ],
+    [
+      "a7c875ed-398e-4225-b894-90762611a11b",
+      "IO_220V5"
+    ],
+    [
+      "413e8cb6-8559-40f1-bf89-7aee0e4842ec",
+      "IO_220V10"
+    ],
+    [
+      "30c052b8-4e57-4b9d-95e1-99bef0134fe2",
+      "IO_220V9"
+    ],
+    [
+      "bfb7de27-8448-4aa5-b96d-84edbceab858",
+      "IO_220V8"
+    ],
+    [
+      "7cc0b9b5-bd30-43ee-93ea-d9c1fee8bbe3",
+      "IO_220V7"
+    ],
+    [
+      "b77dcecb-a192-42bc-abf0-9208774d6f75",
+      "IO_220V11"
+    ],
+    [
+      "454fe4d8-611d-4c8f-87a7-abf9710f3659",
+      "IO_220V6"
+    ],
+    [
+      "707a919f-08f7-4f06-ae1c-f66b7ae7d3f6",
       "Power"
-    ],
-    [
-      "81a6dda0-7b30-4a4a-8379-ee04db9d1815",
-      "PowerOut"
-    ],
-    [
-      "64ab1252-7d8f-466a-ae30-b77ab34f67d4",
-      "PowerOut1"
-    ],
-    [
-      "ce133fac-ea13-49db-b9d1-992666d76dd8",
-      "PowerOut2"
-    ],
-    [
-      "e8d81e45-5a97-46e2-96ba-e92c22ee02f2",
-      "PowerOut3"
     ]
   ],
   "text_variables": {}
