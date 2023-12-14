@@ -13,3 +13,27 @@ Manage hot water recirculation pump
 Monitors the idle time of the pump and switches it on at pre-set intervals to prevent blockage
 Manage situation when input water relay is switched ON, but there is no water flow trough the HP
 Calculate power in KW transferred to the internal water circuit
+Must be able to be mounted on DIN rail
+
+
+
+220V inputs:
+floor pump
+hot water heating pump
+water circulation pump
+weel pump
+flow sensor
+
+220V outputs:
+floor pump
+hot water heating pump
+water circulation pump
+weel pump
+
+low voltage inputs:
+impulse from water flow sensor (to calculate the output power)
+3x temperature sensors
+rs-485 with ttl levels
+
+low voltage outputs:
+pwm for the floor circulation pump
