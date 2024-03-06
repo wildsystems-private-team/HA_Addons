@@ -1119,7 +1119,7 @@
     (pin "1" (uuid 1a99f173-8d27-417a-a9b6-ad585a5ba700))
     (pin "2" (uuid 401cbcca-489a-4cab-90b2-ecc742b157f6))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "R1") (unit 1)
         )
@@ -1127,23 +1127,23 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 186.055 136.525 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Mechanical:MountingHole") (at 179.705 148.59 0) (unit 1)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid 220feff4-5d43-4dcd-b29e-ce464ae66e32)
-    (property "Reference" "H1" (at 188.595 135.3129 0)
+    (property "Reference" "H1" (at 182.245 147.3779 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 188.595 137.7371 0)
+    (property "Value" "MountingHole" (at 182.245 149.8021 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 186.055 136.525 0)
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 179.705 148.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 186.055 136.525 0)
+    (property "Datasheet" "~" (at 179.705 148.59 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "H1") (unit 1)
         )
@@ -1152,7 +1152,7 @@
   )
 
   (symbol (lib_id "Connector_Generic:Conn_02x06_Counter_Clockwise") (at 200.66 116.84 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid 248db2cb-af17-46fa-b50e-8ae560b6e529)
     (property "Reference" "J3" (at 201.93 106.3457 0)
       (effects (font (size 1.27 1.27)))
@@ -1164,6 +1164,9 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 200.66 116.84 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Enable" "0" (at 200.66 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "2" (uuid 29ac1157-4d62-434f-b62f-4b73f53f8fb7))
@@ -1179,7 +1182,7 @@
     (pin "3" (uuid 3ea7fadc-2df9-46d5-9541-516f1cb34f4d))
     (pin "10" (uuid 0486ce24-15e8-440e-a91b-7464fa28fc42))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "J3") (unit 1)
         )
@@ -1242,7 +1245,7 @@
     (pin "27" (uuid ffba4927-44a6-4fce-8a9f-b0349c2499e9))
     (pin "28" (uuid c3c93581-ca47-45df-8f82-dd945d01c7ba))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "U1") (unit 1)
         )
@@ -1267,7 +1270,7 @@
     )
     (pin "1" (uuid 4009b0de-f0e6-455c-8795-fa6301d6bd80))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "#PWR05") (unit 1)
         )
@@ -1297,7 +1300,7 @@
     (pin "3" (uuid 4656479e-ac38-4ae2-8fe0-83e4458b2c1a))
     (pin "1" (uuid cc6b3659-174f-4d06-bba6-8fdc5ebcd770))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "J2") (unit 1)
         )
@@ -1322,7 +1325,7 @@
     )
     (pin "1" (uuid 7afa7eb7-0930-477b-8f4d-c6cd9013ea13))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "#PWR01") (unit 1)
         )
@@ -1347,7 +1350,7 @@
     )
     (pin "1" (uuid 1299753b-b922-4097-8f59-a5b44c485a46))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "#FLG01") (unit 1)
         )
@@ -1373,7 +1376,7 @@
     (pin "1" (uuid c451f0ee-a101-4c71-a227-26993e975fad))
     (pin "2" (uuid 04778da1-f4d5-4d4b-bbf6-a160a2eb5797))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "J1") (unit 1)
         )
@@ -1398,7 +1401,7 @@
     )
     (pin "1" (uuid 7e5d4b81-f541-40ec-9d78-af0a11767e0c))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "#PWR02") (unit 1)
         )
@@ -1406,23 +1409,23 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 209.55 144.78 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Mechanical:MountingHole") (at 203.2 156.845 0) (unit 1)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid c7c513e8-bd9d-4ec4-abb6-f5646a5ef491)
-    (property "Reference" "H4" (at 212.09 143.5679 0)
+    (property "Reference" "H4" (at 205.74 155.6329 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 212.09 145.9921 0)
+    (property "Value" "MountingHole" (at 205.74 158.0571 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 209.55 144.78 0)
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 203.2 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 209.55 144.78 0)
+    (property "Datasheet" "~" (at 203.2 156.845 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "H4") (unit 1)
         )
@@ -1430,23 +1433,23 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 209.55 137.16 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Mechanical:MountingHole") (at 203.2 149.225 0) (unit 1)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid db0ab1a9-df93-427f-a8ec-fd040b9d25bc)
-    (property "Reference" "H3" (at 212.09 135.9479 0)
+    (property "Reference" "H3" (at 205.74 148.0129 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 212.09 138.3721 0)
+    (property "Value" "MountingHole" (at 205.74 150.4371 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 209.55 137.16 0)
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 203.2 149.225 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 209.55 137.16 0)
+    (property "Datasheet" "~" (at 203.2 149.225 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "H3") (unit 1)
         )
@@ -1454,23 +1457,23 @@
     )
   )
 
-  (symbol (lib_id "Mechanical:MountingHole") (at 186.055 144.145 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+  (symbol (lib_id "Mechanical:MountingHole") (at 179.705 156.21 0) (unit 1)
+    (in_bom no) (on_board yes) (dnp yes) (fields_autoplaced)
     (uuid ddc41910-b6d3-43b1-9ee1-40da8ff9a300)
-    (property "Reference" "H2" (at 188.595 142.9329 0)
+    (property "Reference" "H2" (at 182.245 154.9979 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Value" "MountingHole" (at 188.595 145.3571 0)
+    (property "Value" "MountingHole" (at 182.245 157.4221 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 186.055 144.145 0)
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (at 179.705 156.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 186.055 144.145 0)
+    (property "Datasheet" "~" (at 179.705 156.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "H2") (unit 1)
         )
@@ -1495,7 +1498,7 @@
     )
     (pin "1" (uuid a1f3615b-7af2-4b52-b462-f4bcefa0ed07))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83"
           (reference "#PWR03") (unit 1)
         )
@@ -1518,7 +1521,7 @@
       (uuid dd28247b-5436-4d25-9cb5-b8f2a58fc3e3)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "9"))
       )
     )
@@ -1539,7 +1542,7 @@
       (uuid 900d6b61-b5a0-4c53-a573-7b50de6850da)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "5"))
       )
     )
@@ -1560,7 +1563,7 @@
       (uuid cc63ae9f-f649-4365-8ea7-0bbd13e8e5d8)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "6"))
       )
     )
@@ -1581,7 +1584,7 @@
       (uuid 9802d973-a83b-47ff-97d3-7d7d57123dd8)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "8"))
       )
     )
@@ -1610,7 +1613,7 @@
       (uuid d807d270-6aeb-4593-a820-19fa73fe5e2d)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "2"))
       )
     )
@@ -1631,7 +1634,7 @@
       (uuid 8bbeab32-3846-4b60-9fe3-31ca09f01618)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "7"))
       )
     )
@@ -1652,7 +1655,7 @@
       (uuid 093a74a7-6276-4d61-a164-05f3a9ad355f)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "4"))
       )
     )
@@ -1673,7 +1676,7 @@
       (uuid 30ce2a70-4cb0-447b-b264-268937c77e03)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "3"))
       )
     )
@@ -1694,7 +1697,7 @@
       (uuid c13142ff-95d3-49f1-b016-2b761f65ca41)
     )
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83" (page "10"))
       )
     )

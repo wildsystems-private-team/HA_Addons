@@ -166,6 +166,71 @@
         )
       )
     )
+    (symbol "Device:D_Schottky" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "D" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "D_Schottky" (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "diode Schottky" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Schottky diode" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "D_Schottky_0_1"
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy -1.27 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 1.27)
+            (xy 1.27 -1.27)
+            (xy -1.27 0)
+            (xy 1.27 1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.905 0.635)
+            (xy -1.905 1.27)
+            (xy -1.27 1.27)
+            (xy -1.27 -1.27)
+            (xy -0.635 -1.27)
+            (xy -0.635 -0.635)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "D_Schottky_1_1"
+        (pin passive line (at -3.81 0 0) (length 2.54)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 3.81 0 180) (length 2.54)
+          (name "A" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "Device:Fuse" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
       (property "Reference" "F" (at 2.032 0 90)
         (effects (font (size 1.27 1.27)))
@@ -650,8 +715,14 @@
   (junction (at 217.17 33.655) (diameter 0) (color 0 0 0 0)
     (uuid d502f9fa-7308-4fcd-a3e0-c6019dae37f6)
   )
+  (junction (at 48.895 69.85) (diameter 0) (color 0 0 0 0)
+    (uuid dd469409-1a5e-49b0-8647-325960cdc7cb)
+  )
   (junction (at 220.98 33.655) (diameter 0) (color 0 0 0 0)
     (uuid e75fbd6f-8ed7-416a-ab61-244eef3c90b7)
+  )
+  (junction (at 48.895 92.71) (diameter 0) (color 0 0 0 0)
+    (uuid ec7de7ef-eee4-4c85-8b78-975e275a5f76)
   )
   (junction (at 207.645 85.09) (diameter 0) (color 0 0 0 0)
     (uuid ee4543b9-8371-4fc4-a35f-8dff93fadbfa)
@@ -685,9 +756,13 @@
     (stroke (width 0) (type default))
     (uuid 2b389709-4368-4dc0-8c47-b028f3fc5e0b)
   )
-  (wire (pts (xy 37.465 92.71) (xy 53.975 92.71))
+  (wire (pts (xy 37.465 92.71) (xy 48.895 92.71))
     (stroke (width 0) (type default))
     (uuid 30387006-6df2-4d91-a326-a8d3e95ab7a0)
+  )
+  (wire (pts (xy 48.895 92.71) (xy 53.975 92.71))
+    (stroke (width 0) (type default))
+    (uuid 3be25fae-9296-43f8-90c1-e54a28c64863)
   )
   (wire (pts (xy 128.905 81.28) (xy 128.905 92.71))
     (stroke (width 0) (type default))
@@ -709,7 +784,7 @@
     (stroke (width 0) (type default))
     (uuid 57517364-9983-48cf-8a4e-39c67e744948)
   )
-  (wire (pts (xy 45.085 69.85) (xy 53.975 69.85))
+  (wire (pts (xy 45.085 69.85) (xy 48.895 69.85))
     (stroke (width 0) (type default))
     (uuid 59fc592c-eca9-40b8-8aa1-701be8a43d5d)
   )
@@ -789,6 +864,10 @@
     (stroke (width 0) (type default))
     (uuid ae5a4fdd-b75a-431d-86f1-a48002f9509a)
   )
+  (wire (pts (xy 48.895 82.55) (xy 48.895 92.71))
+    (stroke (width 0) (type default))
+    (uuid b119fcab-3945-40e0-8f3d-a6fcad44aec9)
+  )
   (wire (pts (xy 182.88 33.655) (xy 186.69 33.655))
     (stroke (width 0) (type default))
     (uuid b41f1842-c237-4564-a833-68ba368ef290)
@@ -813,9 +892,17 @@
     (stroke (width 0) (type default))
     (uuid c5584618-a116-4ac9-a02e-71cda8e89804)
   )
+  (wire (pts (xy 48.895 69.85) (xy 53.975 69.85))
+    (stroke (width 0) (type default))
+    (uuid c59fdacf-fb69-43fd-b72b-9d2a779ba88e)
+  )
   (wire (pts (xy 149.86 74.93) (xy 161.925 74.93))
     (stroke (width 0) (type default))
     (uuid c9d901f4-4826-42e8-9b71-333b7b4cf472)
+  )
+  (wire (pts (xy 48.895 69.85) (xy 48.895 74.93))
+    (stroke (width 0) (type default))
+    (uuid cc337cb3-f013-47ce-85b5-f14c745ed378)
   )
   (wire (pts (xy 99.06 69.85) (xy 99.06 74.295))
     (stroke (width 0) (type default))
@@ -888,7 +975,7 @@
     (pin "2" (uuid 47f25a89-aa66-402e-af28-44b2b88451a7))
     (pin "1" (uuid 1275a927-7616-4c5a-9b3a-19bc07d43a05))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "F1") (unit 1)
         )
@@ -914,9 +1001,35 @@
     (pin "1" (uuid c11c0e2a-8d68-4805-b988-99b2c810f970))
     (pin "2" (uuid 53ca0950-4ff8-4693-933e-2c2fd491bf02))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "C1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:D_Schottky") (at 48.895 78.74 270) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 167bbc15-c551-451c-9af4-feede583fb74)
+    (property "Reference" "D2" (at 42.545 76.835 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "BAT46W" (at 38.1 81.28 90)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "Diode_SMD:D_SOD-123" (at 48.895 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 48.895 78.74 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ad1dacba-1284-41fb-a309-968b5950def0))
+    (pin "2" (uuid 94a01953-670d-4bfb-ad8a-7b37bb168fe1))
+    (instances
+      (project "uhc-24-8"
+        (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
+          (reference "D2") (unit 1)
         )
       )
     )
@@ -940,7 +1053,7 @@
     (pin "1" (uuid f142e98d-2ca5-4e00-8653-a8186d65dce4))
     (pin "2" (uuid 8b705b06-6f10-4406-a7b8-16f61378dcc0))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "C4") (unit 1)
         )
@@ -957,7 +1070,7 @@
     (property "Value" "10uF/50V" (at 131.826 78.6821 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" (at 129.8702 81.28 0)
+    (property "Footprint" "Capacitor_THT:C_Radial_D5.0mm_H11.0mm_P2.00mm" (at 129.8702 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 128.905 77.47 0)
@@ -966,7 +1079,7 @@
     (pin "1" (uuid 4fdff9bb-a040-4147-bab1-8b9aabf320f8))
     (pin "2" (uuid 2bb1787f-47d3-4328-86e6-2678644fe971))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "C3") (unit 1)
         )
@@ -991,7 +1104,7 @@
     )
     (pin "1" (uuid d19af762-a03e-452b-a711-791a1517e4e9))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "#PWR08") (unit 1)
         )
@@ -1016,7 +1129,7 @@
     )
     (pin "1" (uuid 2b4a4216-2679-4411-ab03-c9a4a314b3ca))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "#PWR09") (unit 1)
         )
@@ -1041,7 +1154,7 @@
     )
     (pin "1" (uuid 277287d4-211f-4a88-8105-ef69821fb761))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "#FLG03") (unit 1)
         )
@@ -1058,7 +1171,7 @@
     (property "Value" "22uF/10V" (at 216.916 81.2221 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" (at 214.9602 83.82 0)
+    (property "Footprint" "Capacitor_THT:C_Radial_D4.0mm_H7.0mm_P1.50mm" (at 214.9602 83.82 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 213.995 80.01 0)
@@ -1067,7 +1180,7 @@
     (pin "1" (uuid 87847210-e657-4780-b01d-97435130e556))
     (pin "2" (uuid 258ae4ef-a8e8-4398-8063-3d5541a1574b))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "C5") (unit 1)
         )
@@ -1093,7 +1206,7 @@
     (pin "2" (uuid 82f32ae0-4096-47b2-9677-d469a8ba4a55))
     (pin "1" (uuid 2f6e021b-4049-4d6c-9588-ed4090a1181c))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "L3") (unit 1)
         )
@@ -1134,7 +1247,7 @@
     (pin "1" (uuid 3f7ba2f7-d002-49d9-abb8-222e2673fab5))
     (pin "2" (uuid c9a7ee3c-5f8d-4886-8a1a-a2d73a5e06d4))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "RV1") (unit 1)
         )
@@ -1160,7 +1273,7 @@
     (pin "2" (uuid e49e0f35-143b-4f78-8dcb-54b7bc6003ca))
     (pin "1" (uuid 290a9e61-888c-4fef-99ce-22b3e769cf12))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "L2") (unit 1)
         )
@@ -1185,7 +1298,7 @@
     )
     (pin "1" (uuid 11137538-d951-42d6-89aa-d1042d58deb5))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "#PWR07") (unit 1)
         )
@@ -1211,7 +1324,7 @@
     (pin "1" (uuid b2ae40e7-548e-4800-b5c1-b3ab6e3dd06c))
     (pin "2" (uuid fd3b4068-ea48-4bb0-900d-2d929eeda61f))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "C6") (unit 1)
         )
@@ -1228,7 +1341,7 @@
     (property "Value" "4.7uF/50V" (at 101.981 79.3171 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" (at 100.0252 81.915 0)
+    (property "Footprint" "Capacitor_THT_AKL:C_Radial_D4.0mm_H5.0mm_P1.50mm" (at 100.0252 81.915 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 99.06 78.105 0)
@@ -1237,7 +1350,7 @@
     (pin "1" (uuid 56f80ce6-e79e-4765-8a45-90fd00eb52ec))
     (pin "2" (uuid 6a44b318-1b2d-4b68-bf89-88b4f22acad8))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "C2") (unit 1)
         )
@@ -1254,7 +1367,7 @@
     (property "Value" "1N5819" (at 161.6075 30.6649 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Diode_SMD_AKL:D_SOD-123" (at 161.29 29.21 0)
+    (property "Footprint" "Diode_SMD_AKL:D_SOD-323" (at 161.29 29.21 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf" (at 161.29 33.655 0)
@@ -1266,7 +1379,7 @@
     (pin "2" (uuid 2562faf0-b8f3-40bf-8b80-d04e987bc9e9))
     (pin "1" (uuid 21e5c32e-4177-4a8e-a5b8-b02805798234))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "D1") (unit 1)
         )
@@ -1292,7 +1405,7 @@
     (pin "2" (uuid 38e77a35-2bf2-4513-956a-f9e50620c7be))
     (pin "1" (uuid 63ef4750-bfd1-4d1f-8bfa-9b330b7dee04))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "L1") (unit 1)
         )
@@ -1317,7 +1430,7 @@
     )
     (pin "1" (uuid 7b2d2a6a-ca63-4017-9d6d-94029b07b7d8))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "#PWR06") (unit 1)
         )
@@ -1384,7 +1497,7 @@
     (pin "4" (uuid 9fc07780-8529-4e36-bc2c-3b298c415a83))
     (pin "1" (uuid f87c02cb-0859-4b4d-afda-df9401fe744f))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "PS1") (unit 1)
         )
@@ -1413,7 +1526,7 @@
     (pin "4" (uuid d3062131-fd47-44b8-8b39-e93ad231afa1))
     (pin "5" (uuid f49ca7cd-580c-44a6-9546-fa2dbff71da3))
     (instances
-      (project "untitled"
+      (project "uhc-24-8"
         (path "/478d7b68-a2c6-4f38-9145-a627e6259a83/6e46bb13-2a97-4ee7-a91d-380b85784294"
           (reference "U2") (unit 1)
         )
