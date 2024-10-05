@@ -1,0 +1,415 @@
+substitutions:
+  system_name: esph-ufh-cntrl-23bac0
+  sensor_template: esph_ufh_cntrl
+  friendly_name: Underfloor Controller 23bac0
+  device_description: This device is designed to control underfloor heating according
+    to a preset temperature
+  log_level: DEBUG
+  pwm_gpio_pin: GPIO15
+  pwm_gpio_period: 20min
+
+# PID parameters:
+  kp: '1'
+  ki: '0'
+  kd: '0'
+
+# temperature sensors for PID controllers:
+
+  temp_sensor_1: temp_sensor_1
+  temp_sensor_2: temp_sensor_2
+  temp_sensor_3: temp_sensor_3
+  temp_sensor_4: temp_sensor_4
+  temp_sensor_5: temp_sensor_5
+  temp_sensor_6: temp_sensor_6
+  temp_sensor_7: temp_sensor_7
+  temp_sensor_8: temp_sensor_8
+  temp_sensor_9: temp_sensor_9
+  temp_sensor_10: temp_sensor_10
+  temp_sensor_11: temp_sensor_11
+  temp_sensor_12: temp_sensor_12
+
+# Output pins for 
+  output_1_pin: GPIO32
+  output_2_pin: GPIO33
+  output_3_pin: GPIO25
+  output_4_pin: GPIO26
+  output_5_pin: GPIO28
+  output_6_pin: GPIO23
+  output_7_pin: GPIO22
+  output_8_pin: GPIO21
+  output_9_pin: GPIO19
+  output_10_pin: GPIO18
+  output_11_pin: GPIO17
+  output_12_pin: GPIO16
+
+esphome:
+  name: ${system_name}
+  friendly_name: ${friendly_name}
+  build_path: /config/esphome/.build/${system_name}
+  name_add_mac_suffix: false
+  project:
+    name: nivanov0.underfloor_controller
+    version: '0.1'
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+  level: ${log_level}
+
+# Enable Home Assistant API
+api:
+ota:
+  - platform: esphome
+dashboard_import:
+  package_import_url: github://wildsystems-private-team/esphome_config/esph_ufh_cntrl.yaml@main
+  import_full_config: false # or true
+
+wifi:
+  ap:
+captive_portal:
+
+esp32_improv:
+  authorizer: false
+
+improv_serial:
+
+button:
+- platform: factory_reset
+  name: Restart with Factory Default Settings
+
+web_server:
+  local: true
+
+switch:
+  - platform: template
+    name: "Heating/Cooling"
+    id: sw_heat_mode
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+    - climate.control:
+        id: esph_ufh_cntrl_pid_controller_1
+        mode: HEAT
+        target_temperature: 20°C
+    on_turn_off:
+    - climate.control:
+        id: esph_ufh_cntrl_pid_controller_1
+        mode: COOL
+        target_temperature: 25°C
+
+one_wire:
+    - platform: gpio
+      pin: GPIO27
+
+sensor:
+
+  - platform: internal_temperature
+    name: "ESP Temperature"
+    id: sys_esp_temperature
+
+  - platform: uptime
+    name: Uptime
+    id: sys_uptime
+    update_interval: 60s
+
+  - platform: wifi_signal
+    name: RSSI
+    id: wifi_signal_db
+    update_interval: 60s
+    entity_category: "diagnostic"
+
+  - platform: dallas_temp
+#    index: 0
+    name: Temperature Sensor 1
+    id: ${sensor_template}_${temp_sensor_1}
+
+
+  - platform: homeassistant
+    name: Temperature Sensor 2
+    id: ${sensor_template}_${temp_sensor_2}
+    entity_id: sensor.${temp_sensor_2}
+
+  - platform: homeassistant
+    name: Temperature Sensor 3
+    id: ${sensor_template}_${temp_sensor_3}
+    entity_id: sensor.${temp_sensor_3}
+
+  - platform: homeassistant
+    name: Temperature Sensor 4
+    id: ${sensor_template}_${temp_sensor_4}
+    entity_id: sensor.${temp_sensor_4}
+
+  - platform: homeassistant
+    name: Temperature Sensor 5
+    id: ${sensor_template}_${temp_sensor_5}
+    entity_id: sensor.${temp_sensor_5}
+
+  - platform: homeassistant
+    name: Temperature Sensor 6
+    id: ${sensor_template}_${temp_sensor_6}
+    entity_id: sensor.${temp_sensor_6}
+
+  - platform: homeassistant
+    name: Temperature Sensor 7
+    id: ${sensor_template}_${temp_sensor_7}
+    entity_id: sensor.${temp_sensor_7}
+
+  - platform: homeassistant
+    name: Temperature Sensor 8
+    id: ${sensor_template}_${temp_sensor_8}
+    entity_id: sensor.${temp_sensor_8}
+
+  - platform: homeassistant
+    name: Temperature Sensor 9
+    id: ${sensor_template}_${temp_sensor_9}
+    entity_id: sensor.${temp_sensor_9}
+
+  - platform: homeassistant
+    name: Temperature Sensor 10
+    id: ${sensor_template}_${temp_sensor_10}
+    entity_id: sensor.${temp_sensor_10}
+
+  - platform: homeassistant
+    name: Temperature Sensor 11
+    id: ${sensor_template}_${temp_sensor_11}
+    entity_id: sensor.${temp_sensor_11}
+
+  - platform: homeassistant
+    name: Temperature Sensor 12
+    id: ${sensor_template}_${temp_sensor_12}
+    entity_id: sensor.${temp_sensor_12}
+
+output:
+- platform: slow_pwm
+  id: slow_pwm_1
+  pin: ${output_1_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_2
+  pin: ${output_2_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_3
+  pin: ${output_3_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_4
+  pin: ${output_4_pin}
+  period: ${pwm_gpio_period}
+
+#- platform: slow_pwm
+#  id: slow_pwm_5
+#  pin: ${output_5_pin}
+#  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_6
+  pin: ${output_6_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_7
+  pin: ${output_7_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_8
+  pin: ${output_8_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_9
+  pin: ${output_9_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_10
+  pin: ${output_10_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_11
+  pin: ${output_11_pin}
+  period: ${pwm_gpio_period}
+
+- platform: slow_pwm
+  id: slow_pwm_12
+  pin: ${output_12_pin}
+  period: ${pwm_gpio_period}
+
+climate:
+- platform: pid
+  name: Zone 1
+  id: ${sensor_template}_pid_controller_1
+  sensor: ${sensor_template}_${temp_sensor_1}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_1
+  cool_output: slow_pwm_1
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 2
+  id: ${sensor_template}_pid_controller_2
+  sensor: ${sensor_template}_${temp_sensor_2}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_2
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 3
+  id: ${sensor_template}_pid_controller_3
+  sensor: ${sensor_template}_${temp_sensor_3}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_3
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 4
+  id: ${sensor_template}_pid_controller_4
+  sensor: ${sensor_template}_${temp_sensor_4}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_4
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+#- platform: pid
+#  name: Zone 5
+#  id: ${sensor_template}_pid_controller_5
+#  sensor: ${sensor_template}_${temp_sensor_5}
+#  default_target_temperature: 24°C
+#  heat_output: slow_pwm_5
+#  control_parameters:
+#    kp: ${kp}
+#    ki: ${ki}
+#    kd: ${kd}
+#  deadband_parameters:
+#    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+#    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 6
+  id: ${sensor_template}_pid_controller_6
+  sensor: ${sensor_template}_${temp_sensor_6}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_6
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 7
+  id: ${sensor_template}_pid_controller_7
+  sensor: ${sensor_template}_${temp_sensor_7}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_7
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 8
+  id: ${sensor_template}_pid_controller_8
+  sensor: ${sensor_template}_${temp_sensor_8}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_8
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 9
+  id: ${sensor_template}_pid_controller_9
+  sensor: ${sensor_template}_${temp_sensor_9}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_9
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 10
+  id: ${sensor_template}_pid_controller_10
+  sensor: ${sensor_template}_${temp_sensor_10}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_10
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 11
+  id: ${sensor_template}_pid_controller_11
+  sensor: ${sensor_template}_${temp_sensor_11}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_11
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
+
+- platform: pid
+  name: Zone 12
+  id: ${sensor_template}_pid_controller_12
+  sensor: ${sensor_template}_${temp_sensor_12}
+  default_target_temperature: 24°C
+  heat_output: slow_pwm_12
+  control_parameters:
+    kp: ${kp}
+    ki: ${ki}
+    kd: ${kd}
+  deadband_parameters:
+    threshold_high: 0.5°C         # deadband within +/-0.5°C of target_temperature
+    threshold_low: -0.5°C
